@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Accueil - Métier infirmière pédiatre</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Bienvenue sur mon site</h1>
+
+<!-- Menu placé en haut de la page -->
+<nav>
+<a href="index.html">Accueil</a>
+<a href="infirmiere.html">Infirmière pédiatre</a>
+<a href="metiers.html">Le métier</a>
+</nav>
+
+<p>Ce site présente le métier d'infirmière pédiatre qui s'occupe de la santé des enfants. Ce métier m'interresse enormement.</p>
+
+<h2>Quelques images du métier</h2>
+
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309" width="300">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f" width="300">
+<img src="https://images.unsplash.com/photo-1585435557343-3b092031a831" width="300">
+<img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322" width="300">
+
+
+<div><!--on ajoute le lien où se trouve la musique -->
+<audio  id="zic"src="music.mp3"></audio>
+<!--on nomme les boutons et leur statut -->
+<div>
+<a href="javascript:void(0)" onclick="changeState(0)" class="bouton">PLAY</a>
+<a href="javascript:void(0)" onclick="changeState(1)" class="bouton">PAUSE</a>
+<a href="javascript:void(0)" onclick="changeState(2)" class="bouton active">STOP</a>
+</div>
+<!--on écrit les variable du script -->
+<script>
+<!--on attribue valeur et fonction de chaque bouton -->
+function changeState(x){
+let boutons = document.querySelectorAll(".bouton");
+let audio = document.querySelector("#zic");
+for(let i =0; i<boutons.length; i++){
+boutons[i].classList.remove("active");
+}
+boutons[x].classList.add("active");
+if(x == 0){
+audio.play();
+}
+if(x == 1){
+audio.pause();
+}
+if(x == 2){
+audio.pause();
+audio.currentTime = 0;
+}
+}
+</script></div>
+
+<br><br>
+
+
+
+</body>
+</html>
